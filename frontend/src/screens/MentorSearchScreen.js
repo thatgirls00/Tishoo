@@ -250,15 +250,15 @@ export default function MentorSearchScreen({ navigation }) {
         {/* Banner */}
         <View style={styles.bannerContainer}>
           <LinearGradient
-            colors={['#FB23CB', '#FF6B9D', '#FFB3D9']}
+            colors={['#FF6B9D', '#FFB3D9', '#FFE5F1']}
             start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
+            end={{ x: 1, y: 0.8 }}
             style={styles.banner}
           >
             <View style={styles.bannerContent}>
               <Text style={styles.bannerTitle}>새 프로젝트를 개설하세요</Text>
               <Text style={styles.bannerSubtitle}>
-                식을 나누고 멘티들과 함께 성장해요!
+                지식을 나누고 멘티들과 함께 성장해요!
               </Text>
               <TouchableOpacity
                 style={styles.bannerButton}
@@ -892,10 +892,12 @@ const styles = StyleSheet.create({
     padding: 40,
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%',
   },
   emptyText: {
     fontSize: 14,
     color: '#9B9BAA',
+    textAlign: 'center',
   },
 });
 

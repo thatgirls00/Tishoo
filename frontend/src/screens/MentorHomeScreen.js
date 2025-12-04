@@ -217,16 +217,16 @@ export default function HomeScreen({ navigation }) {
         {/* New Project Section */}
         <View style={styles.newProjectSection}>
           <LinearGradient
-            colors={['#FB23CB', '#FF6B9D', '#FFB3D9']}
+            colors={['#FF6B9D', '#FFB3D9', '#FFE5F1']}
             start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
+            end={{ x: 1, y: 0.8 }}
             style={styles.newProjectBanner}
           >
             <View style={styles.newProjectContent}>
               <View style={styles.newProjectTextContainer}>
                 <Text style={styles.newProjectTitle}>새 프로젝트를 개설하세요</Text>
                 <Text style={styles.newProjectSubtitle}>
-                  식을 나누고 멘티들과 함께 성장해요!
+                  지식을 나누고 멘티들과 함께 성장해요!
                 </Text>
               </View>
               <TouchableOpacity style={styles.newProjectButton} activeOpacity={0.7}>

@@ -56,6 +56,8 @@ export default function MenteeHomeScreen({ navigation }) {
       currentTask: 'UI 시안 최종 검토',
       mentor: '김멘토',
       mentorInitial: '김',
+      startDate: '2025-11-08',
+      endDate: '2025-12-20',
     },
     {
       id: 2,
@@ -65,6 +67,8 @@ export default function MenteeHomeScreen({ navigation }) {
       currentTask: '컴포넌트 구조 설계',
       mentor: '박개발',
       mentorInitial: '박',
+      startDate: '2025-11-08',
+      endDate: '2025-12-20',
     },
   ];
 
@@ -784,15 +788,17 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(30, 120, 255, 0.2)',
     borderRadius: 16,
     paddingVertical: 17,
+    paddingHorizontal: 8,
     alignItems: 'center',
     justifyContent: 'center',
     height: 53,
   },
   quickStartButtonText: {
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: '600',
     color: '#1e78ff',
-    lineHeight: 24,
+    lineHeight: 20,
+    textAlign: 'center',
   },
   bottomNav: {
     position: 'absolute',

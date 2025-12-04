@@ -33,6 +33,7 @@ import MentorReviewStep2Screen from './src/screens/MentorReviewStep2Screen';
 import MentorReviewStep3Screen from './src/screens/MentorReviewStep3Screen';
 import MyPageScreen from './src/screens/MyPageScreen';
 import MentorMyPageScreen from './src/screens/MentorMyPageScreen';
+import DevToolsScreen from './src/screens/DevToolsScreen';
 
 const Stack = createStackNavigator();
 
@@ -77,6 +78,7 @@ export default function App() {
         <Stack.Screen name="MentorReviewStep3" component={MentorReviewStep3Screen} />
         <Stack.Screen name="MyPage" component={MyPageScreen} />
         <Stack.Screen name="MentorMyPage" component={MentorMyPageScreen} />
+        <Stack.Screen name="DevTools" component={DevToolsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

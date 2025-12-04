@@ -42,6 +42,7 @@ export default function MyPageScreen({ navigation }) {
     { id: 3, title: '새 프로필 만들기', icon: 'new' },
     { id: 4, title: '결제 내역', icon: 'payment' },
     { id: 5, title: '설정', icon: 'settings' },
+    { id: 6, title: '🛠️ 개발자 도구', icon: 'dev', screen: 'DevTools' },
   ];
 
   return (
@@ -123,6 +124,11 @@ export default function MyPageScreen({ navigation }) {
               key={item.id}
               style={styles.menuItem}
               activeOpacity={0.7}
+              onPress={() => {
+                if (item.screen) {
+                  navigation?.navigate(item.screen);
+                }
+              }}
             >
               <Text style={styles.menuItemText}>{item.title}</Text>
               <ArrowRightIcon2 width={20} height={20} color="#9B9BAA" />

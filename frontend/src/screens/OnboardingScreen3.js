@@ -64,7 +64,7 @@ export default function OnboardingScreen3({ navigation }) {
                   </View>
 
                   {/* Project Card */}
-                  <View style={[styles.projectCard, { backgroundColor: '#1e78ff' }]}>
+                  <View style={styles.projectCard}>
                     <Text style={styles.projectTitle}>
                       React로 만드는 실시간 채팅 앱
                     </Text>
@@ -383,6 +383,8 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     padding: 16,
     marginBottom: 12,
+    backgroundColor: '#1e78ff', // 파란색 배경 명시적으로 설정
+    overflow: 'hidden', // 내부 요소가 카드 밖으로 나가지 않도록
   },
   projectTitle: {
     fontSize: 18,
@@ -397,11 +399,13 @@ const styles = StyleSheet.create({
   },
   progressSection: {
     gap: 8,
+    backgroundColor: 'transparent', // 흰색 배경 제거, 투명하게 설정
   },
   progressHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    backgroundColor: 'transparent', // 배경 투명하게
   },
   progressLabel: {
     fontSize: 14,
@@ -425,6 +429,7 @@ const styles = StyleSheet.create({
   dateContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    backgroundColor: 'transparent', // 배경 투명하게
   },
   dateText: {
     fontSize: 14,

@@ -242,8 +242,8 @@ export default function MyProjectScreen({ navigation, route }) {
                 : project.mentor || '멘토';
               
               return (
-                <View 
-                  key={project.id || `project-${index}`} 
+                <View
+                  key={project.id || `project-${index}`}
                   style={styles.projectCard}
                 >
                   <View style={styles.projectImageContainer}>
@@ -304,9 +304,6 @@ export default function MyProjectScreen({ navigation, route }) {
           <View style={styles.emptyContainer}>
             <Text style={styles.emptyText}>
               {loading ? '로딩 중...' : '참여 중인 프로젝트가 없습니다.'}
-            </Text>
-            <Text style={[styles.emptyText, { marginTop: 8, fontSize: 12, color: '#999' }]}>
-              디버그: projects.length = {projects?.length || 0}
             </Text>
           </View>
         )}
@@ -453,7 +450,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 16,
     left: 16,
-    backgroundColor: 'rgba(30, 120, 255, 0.4)',
+    backgroundColor: '#1e78ff',
     borderRadius: 9999,
     paddingHorizontal: 12,
     paddingVertical: 8.176,
@@ -462,7 +459,7 @@ const styles = StyleSheet.create({
   },
   statusBadgeText: {
     fontSize: 14,
-    fontWeight: '400',
+    fontWeight: '600',
     color: '#ffffff',
     lineHeight: 21,
   },

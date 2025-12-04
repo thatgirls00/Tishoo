@@ -2,21 +2,16 @@ import axios from 'axios';
 import { Platform } from 'react-native';
 
 // API 기본 URL 설정
-// iOS 시뮬레이터: localhost 사용 가능
-// Android 에뮬레이터: 10.0.2.2 사용
-// Expo Go (실제 기기): 컴퓨터의 IP 주소 사용 필요
-// TODO: 실제 기기 테스트 시 아래 IP_ADDRESS를 컴퓨터의 IP로 변경하세요
-// 현재 감지된 IP: 192.168.219.103
-// 다른 네트워크에서 테스트 시 IP 주소를 확인하고 변경하세요
-const IP_ADDRESS = '192.168.219.103'; // 컴퓨터의 실제 IP 주소
+// ngrok 터널 사용 (핫스팟 환경에서 백엔드 연결)
+const USE_MOCK_API = false; // true로 설정하면 Mock 데이터 사용
+const NGROK_URL = 'https://ungroundable-cordie-ungamelike.ngrok-free.dev'; // ngrok 터널 URL
 
 const getApiBaseUrl = () => {
   if (__DEV__) {
-    // 개발 환경
-    // Expo Go는 실제 기기이므로 항상 IP 주소 사용
-    // 시뮬레이터/에뮬레이터도 IP 주소 사용 (더 안정적)
-    const baseUrl = `http://${IP_ADDRESS}:8080/api`;
+    // 개발 환경 - ngrok 터널 사용
+    const baseUrl = `${NGROK_URL}/api`;
     console.log('🌐 API Base URL:', baseUrl);
+    console.log('🔧 Mock API Mode:', USE_MOCK_API ? 'ENABLED' : 'DISABLED');
     return baseUrl;
   }
   // 프로덕션 환경

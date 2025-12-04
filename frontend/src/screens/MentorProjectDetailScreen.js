@@ -503,16 +503,14 @@ export default function MentorProjectDetailScreen({ navigation, route }) {
                   skills.map((skill, index) => {
                     // skill이 문자열인지 확인
                     const skillText = typeof skill === 'string' ? skill : String(skill || '');
-                    const row = Math.floor(index / 3);
-                    const col = index % 3;
                     return (
-                      <View key={index} style={[styles.skillTag, { left: col * 120, top: row * 48, width: 'auto', minWidth: 70 }]}>
+                      <View key={index} style={styles.skillTag}>
                         <Text style={styles.skillTagText}>{skillText}</Text>
                       </View>
                     );
                   })
                 ) : (
-                  <View style={[styles.skillTag, { left: 0, top: 0, width: 'auto' }]}>
+                  <View style={styles.skillTag}>
                     <Text style={styles.skillTagText}>스킬 정보가 없습니다.</Text>
                   </View>
                 )}
@@ -683,29 +681,31 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     borderRadius: 9999,
     paddingHorizontal: 12,
-    paddingVertical: 8,
-    height: 32,
+    paddingVertical: 5,
+    height: 30,
     justifyContent: 'center',
+    alignItems: 'center',
   },
   badgeText: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '500',
     color: '#6a6a6a',
-    lineHeight: 21,
+    lineHeight: 18,
   },
   categoryBadge: {
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     borderRadius: 9999,
     paddingHorizontal: 12,
-    paddingVertical: 8,
-    height: 32,
+    paddingVertical: 5,
+    height: 30,
     justifyContent: 'center',
+    alignItems: 'center',
   },
   categoryBadgeText: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '500',
     color: '#6a6a6a',
-    lineHeight: 21,
+    lineHeight: 18,
   },
   tabsContainer: {
     flexDirection: 'row',
@@ -870,32 +870,33 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 24,
-    paddingVertical: 24.693,
+    paddingVertical: 16,
     backgroundColor: '#ffffff',
     borderTopWidth: 0.697,
     borderTopColor: '#e8e8f0',
     gap: 16,
   },
   priceSection: {
-    width: 83.702,
+    minWidth: 110,
+    justifyContent: 'center',
   },
   priceLabel: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '400',
     color: '#9b9baa',
-    lineHeight: 21,
-    marginBottom: 4,
+    lineHeight: 18,
+    marginBottom: 2,
   },
   price: {
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: '600',
     color: '#1e78ff',
-    lineHeight: 25.2,
+    lineHeight: 24,
     letterSpacing: -0.18,
   },
   joinButton: {
     flex: 1,
-    height: 55.994,
+    height: 52,
     backgroundColor: '#1e78ff',
     borderRadius: 16.4,
     justifyContent: 'center',
@@ -1072,8 +1073,9 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   skillsTagsContainer: {
-    position: 'relative',
-    height: 88,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 12,
     width: '100%',
   },
   skillTag: {
@@ -1083,7 +1085,7 @@ const styles = StyleSheet.create({
     paddingVertical: 7.08,
     height: 40,
     justifyContent: 'center',
-    position: 'absolute',
+    alignItems: 'center',
   },
   skillTagText: {
     fontSize: 16,

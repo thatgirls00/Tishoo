@@ -361,7 +361,7 @@ export default function MyProjectDetailScreen({ navigation, route }) {
             <Text style={styles.projectCardTitle}>{project.title || 'React로 만드는 실시간 채팅 앱'}</Text>
             <Text style={styles.projectCardMentor}>{mentorName || '김민준 멘토'}</Text>
           </View>
-          <View style={styles.progressSection}>
+          <View style={styles.progressSectionCard}>
             <View style={styles.progressHeader}>
               <Text style={styles.progressLabel}>진행률</Text>
               <Text style={styles.progressPercent}>{project.progress || 50}%</Text>
@@ -977,7 +977,7 @@ export default function MyProjectDetailScreen({ navigation, route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#faf8ff',
+    backgroundColor: '#f9f9fb',
   },
   header: {
     paddingTop: Platform.OS === 'ios' ? 50 : StatusBar.currentHeight + 24,
@@ -1048,75 +1048,94 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingBottom: 100,
+    paddingTop: 16,
   },
   projectCard: {
     backgroundColor: '#1e78ff',
     borderRadius: 16,
-    padding: 16,
+    padding: 20,
     marginHorizontal: 24,
     marginTop: 0,
     marginBottom: 16,
     gap: 12,
-    minHeight: 163.158,
-    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 5,
+    zIndex: 10,
   },
   projectCardContent: {
     gap: 8,
+    zIndex: 11,
   },
   projectCardTitle: {
     fontSize: 18,
     fontWeight: '600',
     color: '#ffffff',
     lineHeight: 25.2,
+    zIndex: 12,
   },
   projectCardMentor: {
     fontSize: 14,
     fontWeight: '400',
     color: '#ffffff',
     lineHeight: 21,
+    zIndex: 12,
   },
-  progressSection: {
+  progressSectionCard: {
     gap: 8,
     marginTop: 4,
+    zIndex: 11,
   },
   progressHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    zIndex: 12,
   },
   progressLabel: {
     fontSize: 14,
     fontWeight: '400',
     color: '#ffffff',
     lineHeight: 21,
+    zIndex: 13,
   },
   progressPercent: {
     fontSize: 14,
     fontWeight: '400',
     color: '#ffffff',
     lineHeight: 21,
+    zIndex: 13,
   },
   progressBar: {
     height: 8,
     backgroundColor: 'rgba(255, 255, 255, 0.3)',
     borderRadius: 9999,
     overflow: 'hidden',
+    zIndex: 12,
   },
   progressBarFill: {
     height: '100%',
     backgroundColor: '#ffffff',
     borderRadius: 9999,
+    zIndex: 13,
   },
   dateRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    zIndex: 12,
   },
   dateText: {
     fontSize: 14,
     fontWeight: '400',
     color: '#ffffff',
     lineHeight: 21,
+    zIndex: 13,
   },
   tabContainer: {
     flexDirection: 'row',
@@ -1127,6 +1146,7 @@ const styles = StyleSheet.create({
     marginBottom: 0,
     padding: 3.377,
     gap: 3.377,
+    zIndex: 1,
   },
   tabButton: {
     flex: 1,
@@ -1170,6 +1190,7 @@ const styles = StyleSheet.create({
     paddingTop: 15.395,
     paddingBottom: 0.697,
     paddingHorizontal: 16,
+    zIndex: 0,
   },
   calendarTitle: {
     fontSize: 18,
@@ -1847,6 +1868,7 @@ const styles = StyleSheet.create({
   chatSection: {
     flex: 1,
     backgroundColor: '#f5f9ff',
+    zIndex: 0,
   },
   chatScrollView: {
     flex: 1,
@@ -1954,6 +1976,7 @@ const styles = StyleSheet.create({
     padding: 24,
     paddingTop: 24,
     gap: 16,
+    zIndex: 0,
   },
   overallProgressCard: {
     backgroundColor: '#ffffff',
